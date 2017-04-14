@@ -1,1 +1,24 @@
-body{width:80%;margin:10px 10%;background:blue;display:-webkit-flex;display:-ms-flexbox;display:flex}
+body {
+  width: 80%;
+  margin: 10px 10%;
+  background: #cccccc;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  body div {
+    background: green;
+    padding: 10px; }
+    body div h2 {
+      color: white; }
+
+.btnAnimation {
+  background: blue; }
+  .btnAnimation:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3); }
+
+.bordes, .btnAnimation {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 3px 10px; }

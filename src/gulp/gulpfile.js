@@ -22,7 +22,6 @@ gulp.task('default', ['styles', 'javascript'], function(){ // a
 gulp.task('styles', function(){
     return gulp.src('../sass/main.sass')
         .pipe(sass())
-        .pipe(cssnano())
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
             cascade: false
@@ -32,7 +31,7 @@ gulp.task('styles', function(){
 });
 
 // II
-gulp.task('javaScript', function(){
+gulp.task('javascript', function(){
     gulp.src('../comp/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('../../apps/Themes/js'))
