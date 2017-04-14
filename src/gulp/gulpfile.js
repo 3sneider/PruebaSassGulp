@@ -2,8 +2,10 @@
 
 var gulp = require('gulp'); // crear tareas
 var sass = require('gulp-sass'); // trabajar con sass & scss
+var cssnano = require('gulp-cssnano'); // minifica el codigo css
 var uglify = require('gulp-uglify'); // reduce o minifica codigo js
 var pump = require('pump'); //  ayuda a uglify
+var imagemin = require('gulp-imagemin'); //  ayuda a uglify
 var browserSync = require('browser-sync').create(); // sincroniza mi ide con el navegador
 
 
@@ -17,16 +19,10 @@ gulp.task('serve', ['sass'], function(){
 gulp.task('sass', function(){
     return gulp.src('../sass/main.sass')
         .pipe(sass())
+        .pipe(cssnano())
         .pipe(gulp.dest('../../apps/Themes/css'))
         .pipe(browserSync.stream());
 });
-
-//gulp.task('comp', function(){
-//    return gulp.src('../comp/**/*.js')
-//        .pipe(uglify())
-//        .pipe(gulp.dest('../../apps/Themes/js'))
-//        .pipe(browserSync.stream());
-//});
 
 gulp.task('comp', function(cb){
     pump([
@@ -37,3 +33,13 @@ gulp.task('comp', function(cb){
     cb
     );
 });
+
+// esta tarea de optimizar imagenes no es recomendable pero si permitido
+// el agregarla a tu serve o default, porque? por que si se actualiza
+// cada vez que guardamos cambios al comienzo no problem pero entre mas imagenes
+// hallan, cada vez se va a demorar mas la actualizacion
+gulp.task('optm', () => // syntax de la ultima version de javascript
+    gulp.src('../optm/*')
+        .pipe(imagemin()) // png, jpg, gif, svg
+        .pipe(gulp.dest('../../apps/Themes/Img'))
+);
