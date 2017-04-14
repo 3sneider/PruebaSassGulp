@@ -6,6 +6,7 @@ var cssnano = require('gulp-cssnano'); // minifica el codigo css
 var uglify = require('gulp-uglify'); // reduce o minifica codigo js
 var pump = require('pump'); //  ayuda a uglify
 var imagemin = require('gulp-imagemin'); //  ayuda a uglify
+var autoprefixer = require('gulp-autoprefixer'); // renderiza el css y coloca los prefixers
 var browserSync = require('browser-sync').create(); // sincroniza mi ide con el navegador
 
 
@@ -20,6 +21,10 @@ gulp.task('sass', function(){
     return gulp.src('../sass/main.sass')
         .pipe(sass())
         .pipe(cssnano())
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('../../apps/Themes/css'))
         .pipe(browserSync.stream());
 });
