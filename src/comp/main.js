@@ -7,5 +7,5 @@
         console.log(nombre, ' hi');
     }
 
-    saluda(nombrar('Fabian Espitia'));
+    saluda(nombrar('fabian'));
 })();
