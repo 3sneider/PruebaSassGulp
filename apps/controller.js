@@ -48,14 +48,9 @@ app.controller("todoController", function($scope, $http, localStorageService){
 
     // Personas
 
-    $scope.todos = [
-    {
-       name: "Name",
-       lastName: "Last Name"
-    }];
+    $scope.todos = [{ }];
 
     $scope.addTodo = function(){
-        debugger;
         console.log($scope.todo);
         $scope.todos.push($scope.todo);
         $scope.todo = {} ;

@@ -1,23 +1,34 @@
 @import 'colores'
 @import 'mixins'
 
+html, body
+    width: 100%
+    height: 100%
+
 body
-    width: 80%
-    margin: 10px 10%
+    justify-content: center
+    align-items: start
     background: $colorFondo1
-    display: flex
 
     div
-        background: $colorFondo2
         padding: 10px
         h2
             color: white
 
+header
+    background: $backgroundHeader
+    color: $colorHeader
+    width: 100%
+
+.colors, .posts, .locals, .todo, .filtros
+    border: 1px solid #ccc
+
+
 .btnAnimation
-    background: blue
     @extend .bordes
     &:hover
-        +animation(1.3)
+        +scale(1.3)
+        +rotate(12deg)
 
 .bordes
     border-radius: 10px

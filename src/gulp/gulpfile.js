@@ -22,6 +22,7 @@ gulp.task('default', ['styles', 'javascript'], function(){ // a
 gulp.task('styles', function(){
     return gulp.src('../sass/main.sass')
         .pipe(sass())
+        .pipe(cssnano())
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
             cascade: false
