@@ -1,5 +1,5 @@
-@import 'colores'
-@import 'mixins'
+@import 'colors'
+@import 'animations'
 
 html, body
     width: 100%
@@ -12,8 +12,6 @@ body
 
     div
         padding: 10px
-        h2
-            color: white
 
 header
     background: $backgroundHeader
@@ -25,10 +23,7 @@ header
 
 
 .btnAnimation
-    @extend .bordes
-    &:hover
-        +scale(1.3)
-        +rotate(12deg)
+    +buzz()
 
 .bordes
     border-radius: 10px

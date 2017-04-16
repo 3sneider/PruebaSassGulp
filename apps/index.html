@@ -122,7 +122,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <form ng-submit="addTd()">
+                    <form ng-submit="addTd()" class="form-horizontal">
                         <div class="form-group">
                             <label for="dato" class="control-label col-md-2">Dato</label>
                             <div class="col-md-10">
@@ -136,8 +136,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-primary" type="submit" value="send">
-                            <button class="btn btn-danger" ng-click="clean()">clean</button>
+                            <div class="col-md-4 col-md-offset-2">
+                                <input class="btn btn-primary" type="submit" value="send">
+                                <button class="btn btn-danger" ng-click="clean()">clean</button>
+                            </div>
                         </div>
                     </form>
                 </div>
