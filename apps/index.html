@@ -78,17 +78,19 @@
                                 <tr class="active danger">
                                     <td> Name </td>
                                     <td> Last Name </td>
+                                    <td> </td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="todo in todos">
                                     <td> {{ todo.name }} </td>
                                     <td> {{ todo.lastName }} </td>
+                                    <td><a href="" ng-click="rem(todo)" class="danger"> x </a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <form class="form-inline" ng-submit="addPost()">
+                    <form class="form-inline" ng-submit="addTodo()">
                         <div class="form-group">
                             <label for="name" class="sr-only">Nombre</label>
                             <input id="name" class="form-control" type="text" placeholder="Nombre" ng-model="todo.name">
@@ -102,6 +104,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="send">
+                        <button class="btn btn-danger" ng-click="cle()">clean</button>
                     </form>
                 </div>
             </div>
@@ -115,12 +118,14 @@
                                 <tr class="active danger">
                                     <td> Descripcion </td>
                                     <td> Fechas </td>
+                                    <td></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="td in tds">
                                     <td> {{ td.descripcion }} </td>
                                     <td> {{ td.fecha | date: 'short'}} </td>
+                                    <td><a href="" ng-click="remove(td)" class="danger"> x </a></td>
                                 </tr>
                             </tbody>
                         </table>
